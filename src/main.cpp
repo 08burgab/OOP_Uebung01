@@ -34,8 +34,8 @@
 #define TASTER2 5 // LOW wenn gedrückt
 #define POT1 A7   
 
-blinker analogblinker1;
-analogblinker digitalblinker1;
+blinker digitalblinker1;
+analogblinker analogblinker1;
 
 
 void setup()
@@ -51,8 +51,8 @@ void setup()
 
 void loop()
 {
-    blinker.poll();
-    analogblinker.poll();
+    digitalblinker1.poll();
+    analogblinker1.poll();
     db_taster1.poll();
     db_taster2.poll();
     fl_taster1.poll();

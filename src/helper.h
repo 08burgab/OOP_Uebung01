@@ -4,8 +4,9 @@
 
 #include <Arduino.h>
 
-struct db
+class db
 {
+   public:
     // Memeber-Variablen
     bool vorher, out, in, inv = LOW;
     unsigned long last = 0;
@@ -15,6 +16,7 @@ struct db
     void init(uint8_t _taster, uint8_t _db_zeit, bool _inv);
 
     bool poll();
+    private:
 };
 db db_taster1;
 db db_taster2;
