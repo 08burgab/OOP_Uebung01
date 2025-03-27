@@ -47,11 +47,12 @@ void setup()
     pinMode(TASTER1, INPUT_PULLUP);
     pinMode(TASTER2, INPUT_PULLUP);
     pinMode(POT1, INPUT);
-    analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
+    analogblinker1.init(LED1,LED2,TASTER1,TASTER2, POT1, false);
+    digitalblinker1.init(LED1, LED2, TASTER1, TASTER2, false, false);
 }
 
 void loop()
-{
+{ 
     digitalblinker1.poll();
     analogblinker1.poll();
     db_taster1.poll();
