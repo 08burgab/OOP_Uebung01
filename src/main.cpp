@@ -50,6 +50,7 @@ void setup()
     db_taster2.init(TASTER2, DB_ZEIT, false);
     fl_taster1.init(&db_taster1.out);
     fl_taster2.init(&db_taster2.out);
+    analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
 }
 
 void loop()
