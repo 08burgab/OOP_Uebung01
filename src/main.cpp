@@ -27,16 +27,15 @@
 #include "analogblinker.h"
 #include "helper.h"
 
-
 #define LED1 6    // Low-side switch (leuchtet mit LOW)
 #define LED2 3    // Low-side switch (leuchtet mit LOW)
 #define TASTER1 4 // LOW wenn gedrückt
 #define TASTER2 5 // LOW wenn gedrückt
-#define POT1 A7   
+#define POT1 A7
+#define DB_ZEIT 50
 
 blinker digitalblinker1;
 analogblinker analogblinker1;
-
 
 void setup()
 {
@@ -47,12 +46,11 @@ void setup()
     pinMode(TASTER1, INPUT_PULLUP);
     pinMode(TASTER2, INPUT_PULLUP);
     pinMode(POT1, INPUT);
-    analogblinker1.init(LED1,LED2,TASTER1,TASTER2, POT1, false);
-    digitalblinker1.init(LED1, LED2, TASTER1, TASTER2, false, false);
+    analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
 }
 
 void loop()
-{ 
+{
     digitalblinker1.poll();
     analogblinker1.poll();
     db_taster1.poll();
@@ -60,4 +58,12 @@ void loop()
     fl_taster1.poll();
     fl_taster2.poll();
 
+    if (fl_taster1.pos)
+    {
+        digitalblinker1.poll();
+    }
+    if (fl_taster2.pos)
+    {
+        analogblinker1.poll();
+    }
 }
