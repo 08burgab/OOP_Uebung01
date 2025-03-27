@@ -33,6 +33,7 @@
 #define TASTER2 5 // LOW wenn gedrückt
 #define POT1 A7
 #define DB_ZEIT 50
+#define BLINKTIME 1000
 
 blinker digitalblinker1;
 analogblinker analogblinker1;
@@ -47,6 +48,7 @@ void setup()
     pinMode(TASTER2, INPUT_PULLUP);
     pinMode(POT1, INPUT);
     analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
+    digitalblinker1.init(LED1, LED2, TASTER1, TASTER2, BLINKTIME, false);
 }
 
 void loop()
