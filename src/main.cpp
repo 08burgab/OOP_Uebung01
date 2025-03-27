@@ -23,6 +23,10 @@
 // ****************************************************************************
 
 #include <Arduino.h>
+#include "digitalblinker.h"
+#include "analogblinker.h"
+#include "helper.h"
+
 
 #define LED1 2    // Low-side switch (leuchtet mit LOW)
 #define LED2 3    // Low-side switch (leuchtet mit LOW)
@@ -30,8 +34,8 @@
 #define TASTER2 5 // LOW wenn gedrückt
 #define POT1 A7   
 
-analogblinker analogblinker1;
-digitalblinker digitalblinker1;
+blinker analogblinker1;
+analogblinker digitalblinker1;
 
 
 void setup()
@@ -47,7 +51,11 @@ void setup()
 
 void loop()
 {
-    digitalblinker.poll();
+    blinker.poll();
     analogblinker.poll();
+    db_taster1.poll();
+    db_taster2.poll();
+    fl_taster1.poll();
+    fl_taster2.poll();
 
 }
