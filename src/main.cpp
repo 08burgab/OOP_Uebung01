@@ -24,18 +24,26 @@
 
 #include <Arduino.h>
 
-#define LED1 2    // Low-side switch (leuchtet mit LOW)
-#define LED2 3    // Low-side switch (leuchtet mit LOW)
-#define TASTER1 4 // LOW wenn gedrückt
-#define TASTER2 5 // LOW wenn gedrückt
-#define POT1 A7   
+
+
+analogblinker analogblinker1;
+digitalblinker digitalblinker1;
+
 
 void setup()
 {
     Serial.begin(115200); // Baud rate
     Serial.println("..Start..\n");
+    pinMode(LED1, OUTPUT);
+    pinMode(LED2, OUTPUT);
+    pinMode(TASTER1, INPUT_PULLUP);
+    pinMode(TASTER2, INPUT_PULLUP);
+    pinMode(POT1, INPUT);
 }
 
 void loop()
 {
+    digitalblinker.poll();
+    analogblinker.poll();
+
 }
