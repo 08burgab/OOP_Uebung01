@@ -34,6 +34,7 @@
 #define POT1 A7
 #define DB_ZEIT 50
 #define BLINKTIME 1000
+#define POL_TIME 50
 
 blinker digitalblinker1;
 analogblinker analogblinker1;
@@ -51,8 +52,8 @@ void setup()
     db_taster2.init(TASTER2, DB_ZEIT, false);
     fl_taster1.init(&db_taster1.out);
     fl_taster2.init(&db_taster2.out);
-    analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
-    digitalblinker1.init(LED1, LED2, TASTER1, TASTER2, BLINKTIME, false);
+    analogblinker1.init(LED1,LED2,BLINKTIME,POL_TIME,false, false);
+    digitalblinker1.init(LED1, true, LED2 , true, BLINKTIME, false);
 }
 
 void loop()
