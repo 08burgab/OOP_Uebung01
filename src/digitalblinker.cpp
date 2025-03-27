@@ -1,4 +1,4 @@
-#include 'helper.h'
+#include "digitalblinker.h"
 
 void blinker::init(uint8_t _pin1, bool _neg1, uint8_t _pin2, bool _neg2, uint16_t _blinkTime, bool _enable)
 {
