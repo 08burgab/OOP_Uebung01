@@ -28,7 +28,7 @@
 #include "helper.h"
 
 
-#define LED1 2    // Low-side switch (leuchtet mit LOW)
+#define LED1 6    // Low-side switch (leuchtet mit LOW)
 #define LED2 3    // Low-side switch (leuchtet mit LOW)
 #define TASTER1 4 // LOW wenn gedrückt
 #define TASTER2 5 // LOW wenn gedrückt
