@@ -23,9 +23,9 @@ struct flanke
 public:
     void init(bool *_input);
     bool poll();
-
-private:
     bool vorher, out, in, pos, neg = LOW; 
+
+private:OW; 
     bool *input;                          
 };
 flanke fl_taster1;
