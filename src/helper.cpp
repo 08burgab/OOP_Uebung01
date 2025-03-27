@@ -1,4 +1,3 @@
-#include "Arduino.h"
 #include "helper.h"
 
 void db::init(uint8_t _taster, uint8_t _db_zeit, bool _inv)
