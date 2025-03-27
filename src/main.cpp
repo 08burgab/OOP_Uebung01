@@ -47,6 +47,7 @@ void setup()
     pinMode(TASTER1, INPUT_PULLUP);
     pinMode(TASTER2, INPUT_PULLUP);
     pinMode(POT1, INPUT);
+    analogblinker1.init(LED1,LED2,TASTER1,TASTER2,POT1, false);
 }
 
 void loop()
